@@ -1,0 +1,51 @@
+# .github/workflows/daily_checkin.yml
+name: 每日签到 - 可扩展为多账户
+
+on:
+  schedule:
+    # UTC 每日 00:30，折合北京时间 08:30
+    - cron: '30 0 * * *'
+  workflow_dispatch:  # 允许你手动点 Run workflow
+
+jobs:
+  sign:
+    runs-on: ubuntu-latest
+
+    # 如果需要多账户支持，可以取消下面的注释，并在 GitHub Actions 环境中配置对应的 Secrets
+    ### 多账户支持
+    # strategy:
+    #   matrix:
+    #     env: [account1env, account2env, account3env]  # 可根据需要添加更多账户/GitHub Actions 环境
+
+    # # 动态切换到 matrix.env 对应的 Environment
+    # environment: ${{ matrix.env }}
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 生成 config.toml
+        run: |
+          cat > config.toml <<EOF
+          cookie = "${{ secrets.COOKIES }}"
+          captcha_key = "${{ secrets.CAPTCHA_KEY }}"
+          username = "${{ env.USERNAME }}"
+          password = "${{ secrets.PASSWORD }}"
+          timeout  = 20
+          min_wait = 1.0
+          max_wait = 3.0
+          EOF
+      
+      - name: 输出配置 log
+        run: cat config.toml
+
+      - name: 执行签到脚本
+        run: python -m scripts.run_sign

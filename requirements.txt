@@ -1,0 +1,10 @@
+# --- 核心依赖 --------------------------------------------------------
+cloudscraper>=1.2.71    # 处理 Cloudflare JS Challenge
+beautifulsoup4>=4.12.0  # HTML 解析
+tenacity>=8.2.2         # 重试装饰器
+loguru>=0.7.2           # 友好的日志
+lxml>=4.9.0             # HTML 解析
+requests>=2.30.0        # HTTP 请求
+
+# --- 兼容性：仅当 Python < 3.11 时才会用到 tomli --------------------
+tomli>=2.0.1; python_version < "3.11"

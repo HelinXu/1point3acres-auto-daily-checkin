@@ -1,0 +1,14 @@
+# config.toml  ── 放在仓库根目录
+
+[account]
+# —— 二选一 ——
+cookie   = ""
+# —— 或者 ——
+username = ""
+password = ""
+captcha_key = ""         # 只有用“用户名+密码”登录且页面弹验证码时才需要
+
+[run]
+timeout  = 20            # 单次请求超时（秒）
+min_wait = 1.0           # 每次请求之间的最小随机延迟（秒）
+max_wait = 3.0           # 最大随机延迟（秒）

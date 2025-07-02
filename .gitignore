@@ -1,0 +1,75 @@
+# -----------------------------------------------------------------------------
+#  Python                                                       
+# -----------------------------------------------------------------------------
+# Byte-compiled / optimization / packaging
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.pys
+
+# Distribution / egg
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-wheel-metadata/
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# pytest / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.cache/
+.pytest_cache/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# mypy / Pylint / Pyright
+.mypy_cache/
+.dmypy.json
+.pyre/
+.pytype/
+pylint-report.json
+
+# -----------------------------------------------------------------------------
+#  Project-specific excludes
+# -----------------------------------------------------------------------------
+config.toml        # 项目默认配置，可公开提交时留空或删行
+*.local.toml       # 个人机密配置
+.env.example       # 模板可留，真实 .env 会被忽略
+.env               # 真实敏感信息
+
+# VS Code / JetBrains IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# Data outputs / artifacts
+data/
+output/
+*.sqlite
+*.db
+
+# -----------------------------------------------------------------------------
+#  GitHub / CI
+# -----------------------------------------------------------------------------
+# GitHub Actions runner temp
+.github/workflows/*.log
+# MacOS / Windows metadata
+.DS_Store
+Thumbs.db
