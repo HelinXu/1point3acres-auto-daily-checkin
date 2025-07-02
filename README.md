@@ -36,9 +36,14 @@
 | `USERNAME`    | ✅    | `myforumid`                      | 论坛用户名（Cookie 失效时备用登录）配置在 variables 里即可。 |
 | `PASSWORD`    | ❎    | `mypassword`                     | 论坛登录密码（Cookie 失效时备用登录）配置在 secret 里。      |
 
-1. **手动触发 / 等待定时任务**
+![github-secret](docs/github-secret.png)
+
+4. **手动触发 / 等待定时任务**
    - 进入 **Actions → Daily Check‑in** Workflow，点击 **Run workflow** 验证首跑是否成功。
    - 成功后脚本会自动按照工作流中的 `schedule`（默认每日一次）运行。
+
+![github-actions](docs/github-actions.png)
+![success-log](docs/success-log.png)
 
 > 完成以上 4 步，恭喜！你已拥有一台 24×7 的“云端摸鱼机”。
 
@@ -48,9 +53,9 @@
 
 > 需复制整串。
 
-1. 打开浏览器登录 https://1point3acres.com/next/daily-checkin。
+1. 打开浏览器登录 https://1point3acres.com/next/daily-checkin
 2. 按 **F12** → 切换到 **Application / Storage** 面板 → 左侧 **Cookies** → 选择域名。
-3. 找到 `daily-checkin`等字段，全选整行 **Cookie 字符串**（字段间以 `; `分隔）。
+3. 找到 `daily-checkin`等字段，全选整行 **Cookie 字符串**（字段间以 `; `分隔）。可能需要刷新页面。
 4. 粘贴到 `COOKIE` Secret 中保存。
 
 ![get-cookie](docs/get-cookie.png)
