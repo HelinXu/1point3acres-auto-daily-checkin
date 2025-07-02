@@ -32,8 +32,8 @@
 
 | Name          | 必填 | 示例值                           | 说明                                                         |
 | ------------- | ---- | -------------------------------- | ------------------------------------------------------------ |
-| `COOKIE`      | ✅    | `chii_auth=xxxxxxxx; other=yyy;` | 浏览器复制的整串 Cookie（见下文）配置在 secret 里。          |
-| `CAPTCHA_KEY` | ✅    | `1234567890abcdef`               | 你的 2captcha API Key（余额 ≥ 0.002 USD）配置在 secret 里。  |
+| `COOKIES`      | ✅    | `chii_auth=xxxxxxxx; other=yyy;` | 浏览器复制的整串 Cookie（见下文）配置在 secret 里。          |
+| `CAPTCHA_KEY` | ✅    | `1234567890abcdef`               | 你的 2captcha API Key（见下文，充值3刀能用6年）配置在 secret 里。  |
 | `USERNAME`    | ✅    | `myforumid`                      | 论坛用户名（Cookie 失效时备用登录）配置在 variables 里即可。 |
 | `PASSWORD`    | ❎    | `mypassword`                     | 论坛登录密码（Cookie 失效时备用登录）配置在 secret 里。      |
 
@@ -71,7 +71,7 @@
 2. 进入 Dashboard → `API Key` 区域复制 32 位字符串。
 3. 充值 **≥ 1 USD**，余额足够即在脚本调用时自动扣费。
 
-> 每次 Turnstile 解码约 0.00145 USD；1000 次 ≈ 1.45 USD。每个月的开销是0.3元人民币。
+> 每次 Turnstile 解码约 0.00145 USD；1000 次 ≈ 1.45 USD。连续签到一个月的开销是0.3元人民币，几乎免费。
 
 ------
 
