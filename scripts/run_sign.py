@@ -7,5 +7,5 @@ sess  = P3ASession(cfg)
 sess.login()
 print(sign_today(sess,
                  mood="yl",
-                 text="每日打卡 https://github.com/HelinXu/autosign_1point3acres",
+                 text="每日打卡 https://github.com/HelinXu/1point3acres-auto-daily-checkin",
                  captcha_api_key=cfg.captcha_key))
