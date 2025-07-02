@@ -1,6 +1,7 @@
-# autosign‑1point3acres
+# 一亩三分地 全自动每日签到+大米
 
 > **一亩三分地论坛每日自动签到脚本**
+> 
 > *Zero‑touch daily check‑in & "大米" farming on GitHub Actions*
 
 ------
