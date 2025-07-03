@@ -43,9 +43,6 @@ jobs:
           min_wait = 1.0
           max_wait = 3.0
           EOF
-      
-      - name: 输出配置 log
-        run: cat config.toml
 
       - name: 执行签到脚本
         run: |
