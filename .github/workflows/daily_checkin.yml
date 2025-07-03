@@ -48,4 +48,6 @@ jobs:
         run: cat config.toml
 
       - name: 执行签到脚本
-        run: python -m scripts.run_sign
+        run: |
+          sleep $((RANDOM % 300))  # 随机延迟 0～300 秒
+          python -m scripts.run_sign
